@@ -1,0 +1,65 @@
+Layout
+As propriedades que mais usamos em css par layout são:
+
+position
+display
+float
+
+Especificação flexbox layout inteligente
+O pai controla os filhos automaticamente, pq ele sabe quantos filhos ele vai ter e então consegue ter o layout bem dinamico
+
+display:flex; 
+Para ativa o flexbox dentro de um determinado elemento.
+Faz com que se comporte e controla o layout com os filhos deles
+é fazer com que os filhos tenha a mesma altura e vão para o lado esquerdo
+Controla a altura dentro do container, não precisa se procupar com a altura das caixinhas.Alem de o container ser flaxbox as caixinhas dentro dele tambem pode ser container flex.
+Obs:Podemos ter container flaxbox dentro de outros container flaxbox.
+
+align-items: center;
+Controlar elementos verticalmente e distribuir dentro de um container flex.Centralizar os elementos verticalmente dentro do container o elemento maior deixa de ter altura grande e volta ter altura pequena e fica centralizado verticalmente com o elemento grande na esquerda 
+
+justify-content:space-between; 
+Distribuir elementos espaçadamente dentro desse container
+Distribui esses espaços que está sobrando entre esses elementos
+
+flex-direction:column; 
+Permite inverter este comportamento na linha horizontalmente
+fica um abaixo do outro, agora esticam na horizontal , direita para esquerda etc..
+
+order: propriendade
+Para mudar a ordem em que os elementos aparecem na tela
+
+flex: possui tres propriedades
+Controlar o tamanho de elementos internos a um container flex.
+Serve para dar para o pai dica como deve ser posicionado dentro do container o tamanho que deve ter e o tamanho que deve ocupar
+
+       - flex-grow    --> Determina quando ele deve crescer
+flex-->- flex-shrink  --> Determina quanto que deve diminuir
+       - flex-basis   --> Determina qual o tamanho minimo que deve ter para ser rederizado na pagina
+
+width: 33%; para controlar a largura
+
+flex: 1; Podemos pedir para nosso container calcular essa altura automaticamente para nossos filhos usando flex: 1; usando a propriedade flex no proprio filho
+
+
+Quando colocar flaxbox dentro de outros flaxbox utilizamos.
+.box{
+    display: flex;
+	flex-direction: column;
+    flex: 1;
+}
+
+Para o segundo filho tem o dobro de tamanho.
+.box:nth-cild(2){
+    flex: 2;
+}
+Tambem podemo mexer nas ordens das caixinhas usando order:1; ou 2,3 etc..
+.box:nth-cild(2){
+    flex: 2;
+	order: 1; --> Seo acessibilidade pelo teclado
+}
+.box p{
+    flex: 1; --> colocar todos os paragrafos do mesmo tamanho para os botões abaixo estarem no mesmo nivel
+}
+
+
